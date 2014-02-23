@@ -5,6 +5,7 @@ This is suppposed to be a yeoman generator for me to kickstart quick experiments
 * better documentation
 * add server
 * use libsass
+* add grunt task to run only on new files
 
 
 
