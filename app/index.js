@@ -9,11 +9,12 @@ var ExperimentStarterGenerator = yeoman.generators.Base.extend({
   init: function () {
     this.pkg = yeoman.file.readJSON(path.join(__dirname, '../package.json'));
 
-   this.on('end', function () {
+    this.on('end', function () {
       this.installDependencies({
-        skipInstall: options['skip-install']
+        skipInstall: this.options['skip-install']
       });
     });
+
 
   },
 
