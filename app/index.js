@@ -9,11 +9,12 @@ var ExperimentStarterGenerator = yeoman.generators.Base.extend({
   init: function () {
     this.pkg = yeoman.file.readJSON(path.join(__dirname, '../package.json'));
 
-    this.on('end', function () {
-      if (!this.options['skip-install']) {
-        this.npmInstall();
-      }
+   this.on('end', function () {
+      this.installDependencies({
+        skipInstall: options['skip-install']
+      });
     });
+
   },
 
   askFor: function () {
@@ -46,7 +47,10 @@ var ExperimentStarterGenerator = yeoman.generators.Base.extend({
     this.mkdir('assets/js');
 
     this.copy('index.html', 'index.html');
-    this.copy('app.js', 'js/app.js');
+    this.copy('app.js', 'assets/js/app.js');
+
+    this.copy('Gruntfile.js', 'Gruntfile.js');
+    this.copy('server_creds.json', 'server_creds.json');
 
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');

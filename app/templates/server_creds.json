@@ -1,0 +1,8 @@
+{
+	"user": "user",
+	"ip": "000.000.000.000",
+	"path": {
+		"staging": "/path/to/staging/dir/",
+		"prod": "/path/to/prod/dir/"
+	}
+}
