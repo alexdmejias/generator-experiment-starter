@@ -44,11 +44,14 @@ var ExperimentStarterGenerator = yeoman.generators.Base.extend({
   app: function () {
     this.mkdir('assets');
     this.mkdir('assets/css');
+
     this.mkdir('assets/scss');
+    this.copy('styles.scss', 'assets/scss/styles.scss');
+
     this.mkdir('assets/js');
+    this.copy('app.js', 'assets/js/app.js');
 
     this.copy('index.html', 'index.html');
-    this.copy('app.js', 'assets/js/app.js');
 
     this.copy('Gruntfile.js', 'Gruntfile.js');
     this.copy('server_creds.json', 'server_creds.json');
