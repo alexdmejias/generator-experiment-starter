@@ -71,6 +71,11 @@ module.exports = function(grunt) {
 			}
 		},
 
+		connect: {
+			server: {
+			}
+		},
+
         rsync: {
             options: {
                 src: "./",
@@ -95,5 +100,6 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('build', ['sass', 'autoprefixer', 'concat']);
+	grunt.registerTask('default', ['build', 'connect', 'watch']);
 };

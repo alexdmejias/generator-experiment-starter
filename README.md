@@ -3,9 +3,10 @@ This is suppposed to be a yeoman generator for me to kickstart quick experiments
 ## Todo
 * ~~add grunt file~~
 * better documentation
-* add server
+* ~~add server~~
 * use libsass
 * add grunt task to run only on new files
+* run jshint
 
 
 
