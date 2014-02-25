@@ -46,6 +46,9 @@ var ExperimentStarterGenerator = yeoman.generators.Base.extend({
     this.mkdir('assets/css');
 
     this.mkdir('assets/scss');
+    this.copy('normalize.scss', 'assets/scss/_normalize.scss');
+    this.copy('bootstrap.scss', 'assets/scss/_bootstrap.scss');
+    this.copy('base.scss', 'assets/scss/_base.scss');
     this.copy('styles.scss', 'assets/scss/styles.scss');
 
     this.mkdir('assets/js');

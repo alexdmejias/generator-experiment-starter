@@ -1,12 +1,15 @@
 This is suppposed to be a yeoman generator for me to kickstart quick experiments/prototypes not an open project. This is very opinionated to my own workflow.
 
 ## Todo
-* ~~add grunt file~~
 * better documentation
-* ~~add server~~
 * use libsass
 * add grunt task to run only on new files
 * run jshint
+* ~~add grunt file~~
+* ~~add server~~
+* ~~add bootstrap~~
+* ~~add normalize~~
+* ~~add base~~
 
 
 
