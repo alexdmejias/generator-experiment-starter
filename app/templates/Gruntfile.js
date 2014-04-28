@@ -57,12 +57,8 @@ module.exports = function(grunt) {
 				files: ['<%= paths.libraryDir %>/css/styles.css'],
 			},
 
-			php: {
-				files: ['site/**/*.php']
-			},
-
-			txt: {
-				files: ['content/**/*.txt']
+			html: {
+				files: ['index.html']
 			},
 
 			js: {
