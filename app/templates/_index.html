@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title><%= appName %></title>
 	<link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
 <h1>project redy to play with</h1>
+<% if(jquery) { %>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script>
 if (!window.jQuery) {
     document.write('<script src="/assets/js/libs/jquery/dist/jquery.min.js"><\/script>');
 }
 </script>
+<% } %>
 <script src="/assets/js/app.js"></script>
 </body>
 </html>

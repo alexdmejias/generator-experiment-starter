@@ -14,8 +14,6 @@ var ExperimentStarterGenerator = yeoman.generators.Base.extend({
         skipInstall: this.options['skip-install']
       });
     });
-
-
   },
 
   askFor: function () {
@@ -25,19 +23,25 @@ var ExperimentStarterGenerator = yeoman.generators.Base.extend({
     console.log(this.yeoman);
 
     // replace it with a short and sweet description of your generator
-    console.log(chalk.magenta('You\'re using the fantastic ExperimentStarter generator.'));
+    console.log(chalk.magenta('You\'re using the fantastic Experiment Starter generator.'));
 
     var prompts = [{
+      name: 'jquery',
       type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      message: 'Would you like to jQuery?',
+      default: false
+    }, {
+      name: 'appName',
+      message: 'Name of your app',
+      default: 'Experiment Kick Starter'
     }];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.jquery = props.jquery;
+      this.appName = props.appName;
 
       done();
+
     }.bind(this));
   },
 
@@ -54,13 +58,17 @@ var ExperimentStarterGenerator = yeoman.generators.Base.extend({
     this.mkdir('assets/js');
     this.copy('app.js', 'assets/js/app.js');
 
-    this.copy('index.html', 'index.html');
+    var index_params = {
+      appName: this.appName,
+      jquery: this.jquery
+    }
+    this.template('_index.html', 'index.html', index_params);
 
     this.copy('Gruntfile.js', 'Gruntfile.js');
     this.copy('server_creds.json', 'server_creds.json');
 
     this.copy('_package.json', 'package.json');
-    this.copy('_bower.json', 'bower.json');
+    this.template('_bower.json', 'bower.json', index_params);
   },
 
   projectfiles: function () {
