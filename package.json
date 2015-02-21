@@ -1,7 +1,7 @@
 {
   "name": "generator-experiment-starter",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.1.0",
+  "description": "A very opinionated Yeoman generator, intended for private use",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "amejias101/generator-experiment-starter",
